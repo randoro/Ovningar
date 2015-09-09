@@ -70,13 +70,33 @@ public:
 	}
 };
 
+
+char FindMisspelledLetter(std::string word)
+{
+     int i = word.find("k");
+     char res = word.at(i);
+     return res;
+}
+
+void CorrectSpelling(std::string& word, char letter)
+{
+	int i = word.find(letter);
+	word.at(i) = 'c';
+}
+
 int main() 
 {
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
-	MinnesHantering();
-	int* dynArray = new int[5];
+	string str1 = "Takopaj";
+	cout << str1.c_str() << endl;
+	char charFound = FindMisspelledLetter(str1);
+	CorrectSpelling(str1, charFound);
+
+	cout << str1.c_str() << endl;
+	//MinnesHantering();
+	//int* dynArray = new int[5];
 
 	_sleep(-1);
 	return 0;
